@@ -1,0 +1,20 @@
+
+executable = /home/users/bdillon/P-ONE/sim0002/src_spline/run_spline.sh
+
+Arguments = $(Item)
+output = /home/users/bdillon/P-ONE/sim0002/src_spline/out/run_spline_$(Item).out
+error = /home/users/bdillon/P-ONE/sim0002/src_spline/error/run_spline_$(Item).err
+log = /home/users/bdillon/P-ONE/sim0002/src_spline/log/run_spline_$(Item).log
+
+
+Universe = vanilla
+request_memory = 4GB
+request_cpus = 1
+requirements = HasSingularity
+requirements = CUDADeviceName == "NVIDIA TITAN Xp"
+
+notification = never
+
++TransferOutput=""
+
+queue from seq 1 1000 |
