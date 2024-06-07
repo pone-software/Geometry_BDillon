@@ -1,0 +1,21 @@
+
+executable = /home/users/bdillon/P-ONE/sim0002/src_sim/run_muon.sh
+
+Arguments = $(Item)
+output = /home/users/bdillon/P-ONE/sim0002/src_sim/out/run_muon_$(Item).out
+error = /home/users/bdillon/P-ONE/sim0002/src_sim/error/run_muon_$(Item).err
+log = /home/users/bdillon/P-ONE/sim0002/src_sim/log/run_muon_$(Item).log
+
++SingularityImage = "/data/p-one/icetray_offline_june24_2022.sif"
+
+Universe = vanilla
+request_memory = 4GB
+request_cpus = 1
+requirements = HasSingularity
+requirements = CUDADeviceName == "NVIDIA TITAN Xp"
+
+notification = never
+
++TransferOutput=""
+
+queue from seq 1 1000 |
