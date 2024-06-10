@@ -1,0 +1,9 @@
+Universe  = vanilla
+Notification = NEVER
+request_memory = 2GB
+request_cpus = 1
+Executable = /home/users/bdillon/P-ONE/sim0002/book_hdf5/npx3-execs/npx3-3274405.sh
+Log =  /home/users/bdillon/P-ONE/sim0002/book_hdf5/npx3-logs/npx3-3274405.log
+Output = /home/users/bdillon/P-ONE/sim0002/book_hdf5/npx3-out/npx3-3274405.out
+Error = /home/users/bdillon/P-ONE/sim0002/book_hdf5/npx3-error/npx3-3274405.error
+Queue
