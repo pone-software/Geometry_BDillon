@@ -1,0 +1,9 @@
+/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_spline/mmsreco_spline_convs.py:5: UserWarning: Using `import I3Tray` or `from I3Tray import *` is now considered deprecated. Please switch to using `from icecube.icetray import I3Tray`
+  from I3Tray import *
+FATAL (icetray): Module/service "MMSLikelihoodFactory" not registered with I3_MODULE() or I3_SERVICE_FACTORY() (I3Factory.h:90 in FactoryFn I3Factory<Product, FactoryFn>::Create(std::string) const [with Product = I3ServiceFactory; FactoryFn = boost::function<boost::shared_ptr<I3ServiceFactory>(const I3Context&)>; std::string = std::__cxx11::basic_string<char>])
+Traceback (most recent call last):
+  File "/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_spline/mmsreco_spline_convs.py", line 80, in <module>
+    tray.AddService("MMSLikelihoodFactory", "mmsreco_step1",
+  File "/mnt/home/dillonb5/icetray/build/lib/icecube/icetray/i3tray.py", line 147, in AddService
+    super().AddService(_type, _name)
+RuntimeError: Module/service "MMSLikelihoodFactory" not registered with I3_MODULE() or I3_SERVICE_FACTORY() (in FactoryFn I3Factory<Product, FactoryFn>::Create(std::string) const [with Product = I3ServiceFactory; FactoryFn = boost::function<boost::shared_ptr<I3ServiceFactory>(const I3Context&)>; std::string = std::__cxx11::basic_string<char>])

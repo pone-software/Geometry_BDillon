@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 executable = /home/users/bdillon/P-ONE/sim0002/src_sim/run_muon.sh
 
 Arguments = $(Item)
@@ -7,6 +8,16 @@ error = /home/users/bdillon/P-ONE/sim0002/src_sim/error/run_muon_$(Item).err
 log = /home/users/bdillon/P-ONE/sim0002/src_sim/log/run_muon_$(Item).log
 
 +SingularityImage = "/data/p-one/icetray_offline_june24_2022.sif"
+=======
+executable = /mnt/home/dillonb5/P-ONE/sim0002/src_sim/run_muon.sh
+
+Arguments = $(Item)
+output = /mnt/home/dillonb5/P-ONE/sim0002/src_sim/out/run_muon_$(Item).out
+error = /mnt/home/dillonb5/P-ONE/sim0002/src_sim/error/run_muon_$(Item).err
+log = /mnt/home/dillonb5/P-ONE/sim0002/src_sim/log/run_muon_$(Item).log
+
+
+>>>>>>> 7fc7936 (initial commit)
 
 Universe = vanilla
 request_memory = 4GB
@@ -18,4 +29,8 @@ notification = never
 
 +TransferOutput=""
 
+<<<<<<< HEAD
 queue from seq 1 1000 |
+=======
+queue from seq 1 10 |
+>>>>>>> 7fc7936 (initial commit)

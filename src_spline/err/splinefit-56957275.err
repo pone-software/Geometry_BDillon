@@ -1,0 +1,7 @@
+/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_spline/mmsreco_spline_convs.py:5: UserWarning: Using `import I3Tray` or `from I3Tray import *` is now considered deprecated. Please switch to using `from icecube.icetray import I3Tray`
+  from I3Tray import *
+Traceback (most recent call last):
+  File "/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_spline/mmsreco_spline_convs.py", line 36, in <module>
+    load("mmsreco")
+    ^^^^
+NameError: name 'load' is not defined. Did you mean: 'float'?

@@ -1,0 +1,20 @@
+#!/bin/bash --login
+
+#SBATCH --job-name=muonprop
+#SBATCH --array=0-1000
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --time=02:00:00
+#SBATCH --cpus-per-task=1
+#SBATCH --error=err/%x-%j.err
+#SBATCH --mem-per-cpu=1G
+#SBATCH --output=out/%x-%j.out 
+
+echo "Running Muon Generation"
+
+
+
+cd /mnt/home/dillonb5/P-ONE/sim00Ty/src_sim
+eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.3.0/setup.sh`
+/mnt/home/dillonb5/icetray/build/env-shell.sh python3 /mnt/home/dillonb5/P-ONE/sim00Ty/src_sim/GenerateEvents.py -g /mnt/home/dillonb5/P-ONE/sim00Ty/gcdfile/* -n 100 -o /mnt/home/dillonb5/P-ONE/sim00Ty/eventfiles/SingleMuon -r $SLURM_ARRAY_TASK_ID
+

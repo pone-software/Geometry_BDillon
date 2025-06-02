@@ -18,7 +18,11 @@ bash /home/users/bdillon/pone_offline/env-shell_Container.sh python {}/Propogate
 '''.format(opts["job"],
            opts["data"]+"/SingleMuon_",
            opts["out"]+"/SingleMuon_",
+<<<<<<< HEAD
            opts["gcd"]+"/PONE_10String_7Cluster_*.i3.gz")
+=======
+           opts["gcd"]+"/PONE_10String_7Cluster_standard.i3.gz")
+>>>>>>> 7fc7936 (initial commit)
 
 with open(opts["job"] + "/" + processfilename + '.sh', 'w') as ofile:
 	ofile.write(job_string)
@@ -51,7 +55,11 @@ queue from seq {} {} |
            opts["job"]+"/out/"+processfilename,
            opts["job"]+"/error/"+processfilename,
            opts["job"]+"/log/"+processfilename,
+<<<<<<< HEAD
            1, 1000)
+=======
+           1, 10)
+>>>>>>> 7fc7936 (initial commit)
 
 with open(opts["job"] + "/" +  submissionfilename, 'w') as ofile:
 	ofile.write(submit_string)

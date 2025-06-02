@@ -1,0 +1,29 @@
+/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_sim/WaterOpticalModel/MakePoneMediumPropertiesSpeculativeExtendedRange.py:51: UserWarning: Using `import I3Tray` or `from I3Tray import *` is now considered deprecated. Please switch to using `from icecube.icetray import I3Tray`
+  from I3Tray import I3Units
+NOTICE (I3Tray): I3Tray finishing... (I3Tray.cxx:525 in void I3Tray::Execute(bool, unsigned int))
+FATAL (icetray): problems opening file '/mnt/home/dillonb5/P-ONE/sim00Ty/eventfiles/singlemuon_1.i3.gz1.i3.gz' for reading.  Check permissions, paths. (open.cxx:127 in void I3::dataio::open(boost::iostreams::filtering_istream&, const std::string&))
+ERROR (I3Tray): Exception thrown while configuring module "reader". (I3Tray.cxx:410 in void I3Tray::Configure())
+reader (I3Reader)
+  DropBuffers
+    Description :  Tell I3Frames not to cache buffers of serialized frameobject data (this saves memory at the expense of processing speed and the ability to passthru unknown frame objects)
+    Default     :  False
+
+  Filename
+    Description :  Filename to read.  Use either this or Filenamelist, not both.
+    Default     :  ''
+
+  FilenameList
+    Description :  List of files to read, *IN SORTED ORDER*
+    Default     :  []
+    Configured  :  ['/mnt/home/dillonb5/P-ONE/sim00Ty/eventfiles/singlemuon_1.i3.gz1.i3.gz']
+
+  SkipKeys
+    Description :  Don't load frame objects with these keys
+    Default     :  []
+
+Traceback (most recent call last):
+  File "/mnt/home/dillonb5/P-ONE/sim00Ty/src_sim/PropogatePhotons.py", line 105, in <module>
+    tray.Execute()
+  File "/mnt/home/dillonb5/icetray/build/lib/icecube/icetray/i3tray.py", line 220, in Execute
+    super().Execute()
+RuntimeError: problems opening file '/mnt/home/dillonb5/P-ONE/sim00Ty/eventfiles/singlemuon_1.i3.gz1.i3.gz' for reading.  Check permissions, paths. (in void I3::dataio::open(boost::iostreams::filtering_istream&, const std::string&))

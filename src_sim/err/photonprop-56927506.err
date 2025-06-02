@@ -1,0 +1,15 @@
+/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_sim/WaterOpticalModel/MakePoneMediumPropertiesSpeculativeExtendedRange.py:51: UserWarning: Using `import I3Tray` or `from I3Tray import *` is now considered deprecated. Please switch to using `from icecube.icetray import I3Tray`
+  from I3Tray import I3Units
+NOTICE (I3Tray): I3Tray finishing... (I3Tray.cxx:525 in void I3Tray::Execute(bool, unsigned int))
+Traceback (most recent call last):
+  File "/mnt/home/dillonb5/P-ONE/sim00Ty/src_sim/PropogatePhotons.py", line 68, in <module>
+    tray.AddSegment(clsim.I3CLSimMakePhotons, 'goCLSIM',
+  File "/mnt/home/dillonb5/icetray/build/lib/icecube/icetray/i3tray.py", line 195, in AddSegment
+    return _segment(self, _name, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/home/dillonb5/icetray/build/lib/icecube/clsim/traysegments/I3CLSimMakePhotons.py", line 278, in I3CLSimMakePhotons
+    clsimParams = setupDetector(
+                  ^^^^^^^^^^^^^^
+  File "/mnt/home/dillonb5/icetray/build/lib/icecube/clsim/traysegments/common.py", line 361, in setupDetector
+    assert isinstance(WavelengthAcceptance, simclasses.I3CLSimFunctionMap)
+AssertionError

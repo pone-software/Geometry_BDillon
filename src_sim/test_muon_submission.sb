@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=test-submission
+#SBATCH --ntasks=1
+#SBATCH --mem=50M
+#SBATCH --time=00:20:00
+#SBATCH --output=/mnt/home/dillonb5/P-ONE/sim0002/src_sim/out/%x-%j.out
+#SBATCH --error=error/%x-%j.err
+module purge
+
+
+
+cd /mnt/home/dillonb5/P-ONE/sim0002/src_sim
+
+/mnt/home/dillonb5/icetray/build/env-shell.sh python3 GenerateEvents.py -o /mnt/home/dillonb5/P-ONE/sim0002/eventfiles -g /mnt/home/dillonb5/P-ONE/sim0002/gcdfile/PONE* -r 100
+
+#scontrol show job $SLURM_JOB_ID
+

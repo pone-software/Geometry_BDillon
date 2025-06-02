@@ -1,0 +1,5 @@
+/mnt/ffs24/home/dillonb5/P-ONE/sim00Ty/src_sim/WaterOpticalModel/MakePoneMediumPropertiesSpeculativeExtendedRange.py:51: UserWarning: Using `import I3Tray` or `from I3Tray import *` is now considered deprecated. Please switch to using `from icecube.icetray import I3Tray`
+  from I3Tray import I3Units
+NOTICE (I3Tray): I3Tray finishing... (I3Tray.cxx:525 in void I3Tray::Execute(bool, unsigned int))
+./env-wrapper.sh: line 4: 1305785 Killed                  python3 /mnt/home/dillonb5/P-ONE/sim00Ty/src_sim/PropogatePhotons.py -i /mnt/home/dillonb5/P-ONE/sim00Ty/eventfiles/singlemuon_ -g /mnt/home/dillonb5/P-ONE/sim00Ty/gcdfile/* -o /mnt/home/dillonb5/P-ONE/sim00Ty/photonfiles/test-1
+slurmstepd: error: Detected 1 oom_kill event in StepId=56930900.batch. Some of the step tasks have been OOM Killed.

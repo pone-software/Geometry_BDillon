@@ -8,7 +8,11 @@ source: https://github.com/pone-software/pone_offline/tree/master/Examples
 
 import argparse
 import os
+<<<<<<< HEAD
 from I3Tray import *
+=======
+from icecube.icetray import I3Tray
+>>>>>>> 7fc7936 (initial commit)
 from icecube import icetray
 from icecube import phys_services
 from icecube import clsim

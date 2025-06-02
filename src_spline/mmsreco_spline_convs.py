@@ -6,6 +6,10 @@ from I3Tray import *
 import sys
 import time
 import numpy as np
+<<<<<<< HEAD
+=======
+import os
+>>>>>>> 7fc7936 (initial commit)
 
 import argparse
 
@@ -33,7 +37,11 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
+<<<<<<< HEAD
 load("mmsreco")
+=======
+icetray.load("mmsreco")
+>>>>>>> 7fc7936 (initial commit)
 
 tray = I3Tray()
 
@@ -58,6 +66,10 @@ def make_seed(frame):
 tray.AddModule(make_seed, 'make_seed')
 
 PulsesName = "PMTResponse_nonoise"
+<<<<<<< HEAD
+=======
+truthseed = "MCTruth_seed"
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddService(
     "I3GSLSimplexFactory",
@@ -75,10 +87,18 @@ tray.AddService("I3HalfSphereParametrizationFactory", "simpleparam",
 
 #-------------------------------------------------------------
 tray.AddService("I3BasicSeedServiceFactory", "seed1", FirstGuess="linefit", InputReadout="PMTResponse_nonoise")
+<<<<<<< HEAD
 
 tray.AddService("MMSLikelihoodFactory", "mmsreco_step1",
                 InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=35.0,
                 SplineTablePath="/data/p-one/twagiray/trackreco/src_mmsreco/mmsreco/water.fits")
+=======
+SplineTablePath = os.path.expandvars("$I3_SRC/mmsreco/water.fits")
+
+tray.AddService("MMSLikelihoodFactory", "mmsreco_step1",
+                InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=35.0,
+                SplineTablePath=SplineTablePath)
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddModule("I3SimpleFitter", "LLHFit_step1",
         SeedService = "seed1",
@@ -94,7 +114,11 @@ tray.AddService("I3BasicSeedServiceFactory", "seed2", FirstGuess="LLHFit_step1")
 
 tray.AddService("MMSLikelihoodFactory", "mmsreco_step2",
                 InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=20.0,
+<<<<<<< HEAD
                 SplineTablePath="/data/p-one/twagiray/trackreco/src_mmsreco/mmsreco/water.fits")
+=======
+                SplineTablePath=SplineTablePath)
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddModule("I3SimpleFitter", "LLHFit_step2",
         SeedService = "seed2",
@@ -110,7 +134,11 @@ tray.AddService("I3BasicSeedServiceFactory", "seed3", FirstGuess="LLHFit_step2")
 
 tray.AddService("MMSLikelihoodFactory", "mmsreco_step3",
                 InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=10.0,
+<<<<<<< HEAD
                 SplineTablePath="/data/p-one/twagiray/trackreco/src_mmsreco/mmsreco/water.fits")
+=======
+                SplineTablePath=SplineTablePath)
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddModule("I3SimpleFitter", "LLHFit_step3",
         SeedService = "seed3",
@@ -126,7 +154,11 @@ tray.AddService("I3BasicSeedServiceFactory", "seed4", FirstGuess="LLHFit_step3")
 
 tray.AddService("MMSLikelihoodFactory", "mmsreco_step4",
                 InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=5.0,
+<<<<<<< HEAD
                 SplineTablePath="/data/p-one/twagiray/trackreco/src_mmsreco/mmsreco/water.fits")
+=======
+                SplineTablePath=SplineTablePath)
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddModule("I3SimpleFitter", "LLHFit_step4",
         SeedService = "seed4",
@@ -141,7 +173,11 @@ tray.AddService("I3BasicSeedServiceFactory", "seed5", FirstGuess="LLHFit_step4")
 
 tray.AddService("MMSLikelihoodFactory", "mmsreco_final",
                 InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=0.0,
+<<<<<<< HEAD
                 SplineTablePath="/data/p-one/twagiray/trackreco/src_mmsreco/mmsreco/water.fits")
+=======
+                SplineTablePath=SplineTablePath)
+>>>>>>> 7fc7936 (initial commit)
 
 tray.AddModule("I3SimpleFitter", "LLHFit_mmsreco",
         SeedService = "seed5",
@@ -152,10 +188,34 @@ tray.AddModule("I3SimpleFitter", "LLHFit_mmsreco",
         If = lambda frame: PulsesName in frame and "LLHFit_step4" in frame,
         OutputName = "LLHFit_mmsreco")
 
+<<<<<<< HEAD
+=======
+#-------------------------------------------------------------
+tray.AddService("I3BasicSeedServiceFactory", "trueseed", FirstGuess=truthseed)
+
+tray.AddService("MMSLikelihoodFactory", "mmsreco_truth",
+                InputPulses=PulsesName,  ExpectNoise=True, ConvolutionWidth=0.0,
+                SplineTablePath=SplineTablePath)
+
+tray.AddModule("I3SimpleFitter", "LLHFit_mctruth",
+        SeedService = "trueseed",
+        Parametrization = "simpleparam",
+        LogLikelihood = "mmsreco_truth",
+        Minimizer = "minimizeit", 
+        StoragePolicy = "OnlyBestFit",
+        If = lambda frame: PulsesName in frame and "MCTruth_seed" in frame,
+        OutputName = "LLHFit_mctruth")
+
+#-------------------------------------------------------------
+>>>>>>> 7fc7936 (initial commit)
 
 tray.Add("I3Writer", Filename = outfile,
         Streams=[icetray.I3Frame.DAQ, icetray.I3Frame.Physics],
         DropOrphanStreams=[icetray.I3Frame.Calibration, icetray.I3Frame.DAQ])
 
 tray.Execute()
+<<<<<<< HEAD
 tray.Finish()
+=======
+tray.Finish()
+>>>>>>> 7fc7936 (initial commit)

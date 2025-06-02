@@ -1,0 +1,21 @@
+Running Photon Propogation
+************************************************************************
+*                                                                      *
+*                   W E L C O M E  to  I C E T R A Y                   *
+*                                                                      *
+*                    Version .main     git:3fe9c8c2                    *
+*                                                                      *
+*                You are welcome to visit our Web site                 *
+*                        http://icecube.umd.edu                        *
+*                                                                      *
+************************************************************************
+
+Icetray environment has:
+   I3_SRC       = /mnt/home/dillonb5/icetray/source
+   I3_BUILD     = /mnt/home/dillonb5/icetray/build
+   I3_TESTDATA  = /cvmfs/icecube.opensciencegrid.org/py3-v4.3.0/../data/i3-test-data-svn/trunk
+   I3_PRODDATA should be set to an existing directory path
+   Python       = 3.11.3
+PONE environment has:
+   PONE_SRC     = /mnt/home/dillonb5/pone_offline/
+Exited Icetray Environment.
