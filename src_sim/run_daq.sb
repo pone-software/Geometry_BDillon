@@ -1,6 +1,7 @@
 #!/bin/bash --login
 
 #SBATCH --job-name=daq
+#SBATCH --array=0-1000
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --time=06:00:00
